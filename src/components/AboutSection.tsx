@@ -12,8 +12,8 @@ const ItalicizeCaps: React.FC<{ text: string }> = ({ text }) => {
   };
 
   return (
-    <div className="mt-4 pt-4 border-t border-black/10">
-      <p className="text-base text-gray-600 leading-relaxed text-justify hyphens-auto">
+    <div className="mt-3 pt-3 md:mt-4 md:pt-4 border-t border-black/10">
+      <p className="text-sm md:text-base text-gray-600 leading-relaxed text-justify hyphens-auto">
         {processText(text)}
       </p>
     </div>
@@ -57,14 +57,14 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="py-8 md:py-10 px-4 sm:px-6">
+    <section className="py-4 md:py-10 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-16 items-start">
           
           {/* Left Content - Text Sections */}
-          <div className="space-y-8">
+          <div className="space-y-4 md:space-y-8">
             <motion.h1
-              className="text-4xl md:text-5xl font-bold leading-tight text-brand-dark"
+              className="text-3xl md:text-5xl font-bold leading-tight text-brand-dark"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -73,11 +73,11 @@ const AboutSection = () => {
             </motion.h1>
 
             {/* Sticky Tabs */}
-            <div className="flex items-start gap-4 sticky top-20 bg-brand-bg/80 backdrop-blur-md z-10 py-0 rounded-xl">
+            <div className="flex items-start gap-2 md:gap-4 sticky top-20 bg-brand-bg/80 backdrop-blur-md z-10 py-0 rounded-xl">
               {sections.map((section, index) => (
                 <button
                   key={index}
-                  className={`px-4 py-1 md:py-2 border-b-4 transition-colors duration-300 font-semibold text-xl ${
+                  className={`px-2 md:px-4 py-1 md:py-2 border-b-4 transition-colors duration-300 font-semibold text-lg md:text-xl ${
                     activeIndex === index 
                       ? "border-brand-yellow text-brand-dark" 
                       : "border-transparent text-gray-400 hover:text-brand-dark"
@@ -93,16 +93,16 @@ const AboutSection = () => {
             </div>
 
             {/* Accordion styled as cards */}
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               {sections[activeIndex].faqs.map((faq, index) => (
-                <div key={index} className="bg-brand-green/5 backdrop-blur-lg rounded-2xl border border-white/20 shadow-lg p-6 transition-all duration-300">
+                <div key={index} className="bg-brand-green/5 backdrop-blur-lg rounded-2xl border border-white/20 shadow-lg p-4 md:p-6 transition-all duration-300">
                   <div
                     className="flex justify-between items-center cursor-pointer"
                     onClick={() => toggleFAQ(index)}
                   >
-                    <p className="text-lg md:text-xl font-bold text-brand-dark">{faq.question}</p>
-                    <div className={`w-8 h-8 flex items-center justify-center rounded-full border-2 ${expandedIndex === index ? 'border-brand-yellow' : 'border-brand-dark'} transition-all`}>
-                      <Plus size={20} className={`transition-transform duration-300 ${expandedIndex === index ? 'rotate-45 text-brand-yellow' : 'text-brand-dark'}`} />
+                    <p className="text-base md:text-xl font-bold text-brand-dark pr-2">{faq.question}</p>
+                    <div className={`w-6 h-6 md:w-8 md:h-8 flex items-center justify-center rounded-full border-2 flex-shrink-0 ${expandedIndex === index ? 'border-brand-yellow' : 'border-brand-dark'} transition-all`}>
+                      <Plus size={16} className={`md:w-5 md:h-5 transition-transform duration-300 ${expandedIndex === index ? 'rotate-45 text-brand-yellow' : 'text-brand-dark'}`} />
                     </div>
                   </div>
                   {expandedIndex === index && (
@@ -123,19 +123,19 @@ const AboutSection = () => {
           {/* Right side - Image Gallery */}
           <div className="relative lg:sticky top-24">
             <motion.div
-              className="gallery w-full h-[70vh] relative overflow-hidden rounded-2xl shadow-2xl"
+              className="gallery w-full h-[50vh] md:h-[70vh] relative overflow-hidden rounded-2xl shadow-2xl"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
             >
               <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070" alt="Team meeting" className="absolute inset-0 w-full h-full object-cover"/>
             </motion.div>
-            <div className="absolute bottom-6 right-6 flex items-center gap-4">
-              <button className="p-3 bg-white/60 backdrop-blur-sm hover:bg-white/90 transition rounded-full shadow-md">
-                <ChevronLeft className="w-8 h-8 text-brand-dark" />
+            <div className="absolute bottom-4 md:bottom-6 right-4 md:right-6 flex items-center gap-2 md:gap-4">
+              <button className="p-2 md:p-3 bg-white/60 backdrop-blur-sm hover:bg-white/90 transition rounded-full shadow-md">
+                <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 text-brand-dark" />
               </button>
-              <button className="p-3 bg-white/60 backdrop-blur-sm hover:bg-white/90 transition rounded-full shadow-md">
-                <ChevronRight className="w-8 h-8 text-brand-dark" />
+              <button className="p-2 md:p-3 bg-white/60 backdrop-blur-sm hover:bg-white/90 transition rounded-full shadow-md">
+                <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-brand-dark" />
               </button>
             </div>
           </div>

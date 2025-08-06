@@ -31,11 +31,11 @@ const teamMembers = [
 
 const Team = () => {
   return (
-    <section className="py-16 md:py-0 px-4 sm:px-6">
+    <section className="py-24 md:py-0 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.h1
-          className="text-4xl md:text-5xl font-bold text-brand-dark leading-tight mb-6"
+          className="text-3xl md:text-5xl mt-6 md:mt-0 font-bold text-brand-dark leading-tight mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
