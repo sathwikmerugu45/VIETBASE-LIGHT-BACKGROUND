@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, Mic, Calendar } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const newsItems = [
@@ -37,7 +37,7 @@ const events = [
 
 const NewsSection = () => {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-16 md:py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* News Header */}
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-12 md:mb-16">
@@ -51,7 +51,7 @@ const NewsSection = () => {
         </div>
 
         {/* News Cards with Images */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 md:mb-28">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 md:mb-20">
           {newsItems.map((item, index) => (
             <motion.div 
               key={index} 

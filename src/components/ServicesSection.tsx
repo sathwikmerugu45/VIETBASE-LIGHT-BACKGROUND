@@ -17,7 +17,7 @@ const servicesData = [
     icon: Settings,
     label: "Staying compliant",
     title: "Administration",
-    color: "green", // This will correctly apply the green theme
+    color: "yellow", // This will correctly apply the green theme
     items: [
       "Corporate secretarial",
       "Accounting & tax compliance",
@@ -103,11 +103,11 @@ const ServiceCard = ({ icon: Icon, label, title, color, items, index }: any) => 
 
 const ServicesSection = () => {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-16 md:py-5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-16 md:mb-20 text-center">
-          <div className="text-brand-green font-semibold mb-4 tracking-wider">
+        <div className="mb-16 text-center">
+          <div className="text-brand-yellow font-semibold mb-4 tracking-wider">
             ● OUR SERVICES
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight text-brand-dark">

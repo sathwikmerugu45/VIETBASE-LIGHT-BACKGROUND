@@ -41,11 +41,11 @@ const ExpertiseSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-16 md:py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         {/* Main Heading and Introduction */}
-        <div className="text-left mb-16 md:mb-20 max-w-4xl">
+        <div className="text-left mb-16 max-w-4xl">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-dark leading-tight">
             If you want to succeed in new markets, 
             you will need an <span className="text-brand-yellow">expert.</span>
@@ -77,80 +77,9 @@ const ExpertiseSection = () => {
             </motion.div>
           ))}
         </div>
- {/* Tax Guide Resource */}
-        <div className="bg-white/50 backdrop-blur-md rounded-3xl p-6 sm:p-8 mt-20 relative overflow-hidden max-w-5xl mx-auto border border-white/50 shadow-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <motion.div 
-              className="bg-white rounded-2xl p-4 w-full max-w-xs mx-auto lg:mx-0 shadow-lg"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="w-full h-40 bg-gradient-to-br from-brand-green to-brand-yellow rounded-xl mb-3 relative overflow-hidden">
-                <div className="absolute inset-0 bg-black/20"></div>
-                <div className="absolute bottom-3 left-3 text-white">
-                  <div className="text-xl font-bold">Vietnam tax</div>
-                  <div className="text-md">guide</div>
-                </div>
-              </div>
-            </motion.div>
-            
-            <div className="space-y-4 text-center lg:text-left">
-              <div className="text-brand-yellow text-sm font-medium">Free resource</div>
-              <h3 className="text-2xl sm:text-3xl font-bold leading-snug text-brand-dark">
-                Taxation in Vietnam: Complete<br />
-                guide (2025)<span className="text-brand-yellow">.</span>
-              </h3>
-              <p className="text-base text-gray-600">
-                A comprehensive guide covering taxation in Vietnam for both corporate and individual taxpayers.
-              </p>
-              <button className="bg-brand-yellow text-brand-dark px-5 py-2 text-sm sm:text-base rounded-full font-semibold hover:bg-opacity-80 transition-colors">
-                Download
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
 };
 
 export default ExpertiseSection;
-
-//  {/* Tax Guide Resource */}
-//         <div className="bg-white/50 backdrop-blur-md rounded-3xl p-6 sm:p-8 mt-20 relative overflow-hidden max-w-5xl mx-auto border border-white/50 shadow-xl">
-//           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-//             <motion.div 
-//               className="bg-white rounded-2xl p-4 w-full max-w-xs mx-auto lg:mx-0 shadow-lg"
-//               initial={{ opacity: 0, scale: 0.9 }}
-//               whileInView={{ opacity: 1, scale: 1 }}
-//               viewport={{ once: true }}
-//               transition={{ duration: 0.5 }}
-//             >
-//               <div className="w-full h-40 bg-gradient-to-br from-brand-green to-brand-yellow rounded-xl mb-3 relative overflow-hidden">
-//                 <div className="absolute inset-0 bg-black/20"></div>
-//                 <div className="absolute bottom-3 left-3 text-white">
-//                   <div className="text-xl font-bold">Vietnam tax</div>
-//                   <div className="text-md">guide</div>
-//                 </div>
-//               </div>
-//             </motion.div>
-            
-//             <div className="space-y-4 text-center lg:text-left">
-//               <div className="text-brand-yellow text-sm font-medium">Free resource</div>
-//               <h3 className="text-2xl sm:text-3xl font-bold leading-snug text-brand-dark">
-//                 Taxation in Vietnam: Complete<br />
-//                 guide (2025)<span className="text-brand-yellow">.</span>
-//               </h3>
-//               <p className="text-base text-gray-600">
-//                 A comprehensive guide covering taxation in Vietnam for both corporate and individual taxpayers.
-//               </p>
-//               <button className="bg-brand-yellow text-brand-dark px-5 py-2 text-sm sm:text-base rounded-full font-semibold hover:bg-opacity-80 transition-colors">
-//                 Download
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>

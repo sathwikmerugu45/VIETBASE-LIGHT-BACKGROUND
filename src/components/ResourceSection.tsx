@@ -87,10 +87,10 @@ const ResourceCard = ({ category, title, color, index }: { category: string, tit
 
 const ResourceSection = () => {
   return (
-    <section className="pb-20 pt-16 lg:pt-24">
+    <section className="py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-left text-brand-dark">
+          <h2 className="text-4xl md:text-5xl font-bold text-left text-brand-dark">
             Find the right solution.
           </h2>
         </div>
@@ -107,45 +107,3 @@ const ResourceSection = () => {
 };
 
 export default ResourceSection;
-
-
-{/* Tax Guide Resource */}
-        {/* <div className="bg-gradient-to-r from-blue-900 via-teal-700 to-teal-600 rounded-3xl p-8 lg:p-12 relative overflow-hidden">
-          <div className="absolute right-8 top-8">
-            <div className="flex space-x-2">
-              <button className="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center">
-                <ChevronLeft className="w-6 h-6 text-white" />
-              </button>
-              <button className="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center">
-                <ChevronRight className="w-6 h-6 text-white" />
-              </button>
-            </div>
-          </div> */}
-
-          {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="bg-white rounded-2xl p-6 max-w-sm">
-              <div className="w-full h-48 bg-gradient-to-br from-red-500 via-teal-500 to-blue-500 rounded-xl mb-4 relative overflow-hidden">
-                <div className="absolute inset-0 bg-black/20"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <div className="text-2xl font-bold">Vietnam tax</div>
-                  <div className="text-lg">guide</div>
-                </div>
-              </div>
-            </div> */}
-{/* 
-            <div className="space-y-6">
-              <div className="text-yellow-400 text-sm font-medium">Free resource</div>
-              <h3 className="text-4xl font-bold">
-                Taxation in Vietnam: Complete<br />
-                guide (2025)<span className="text-yellow-400">.</span>
-              </h3>
-              <p className="text-lg text-gray-300">
-                A comprehensive guide covering taxation in Vietnam for both<br />
-                corporate and individual taxpayers.
-              </p>
-              <button className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-colors">
-                Download
-              </button>
-            </div>
-          </div> */}
-        {/* </div> */}
