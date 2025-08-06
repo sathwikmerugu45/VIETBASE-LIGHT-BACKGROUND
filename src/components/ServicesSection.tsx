@@ -103,7 +103,7 @@ const ServiceCard = ({ icon: Icon, label, title, color, items, index }: any) => 
 
 const ServicesSection = () => {
   return (
-    <section className="py-16 md:py-5">
+    <section className="py-4 md:py-5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 text-center">
@@ -114,7 +114,7 @@ const ServicesSection = () => {
             Corporate services for every<br className="hidden sm:block" />
             part of your <span className="text-brand-dark">journey</span><span className="text-brand-yellow">.</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-600 max-w-4xl mx-auto -mb-4 leading-relaxed">
             Find intelligent answers to the most complex administrative issues you'll come up against as your business expands into Vietnam and beyond. Ask us for solutions, not just advice.
           </p>
         </div>

@@ -46,7 +46,7 @@ const Team = () => {
 
         {/* Subheading */}
         <motion.p
-          className="text-lg text-gray-600 leading-relaxed mb-16 max-w-4xl"
+          className="text-lg text-gray-600 leading-relaxed mb-10 max-w-4xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

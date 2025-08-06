@@ -57,7 +57,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-10 px-4 sm:px-6">
+    <section className="py-8 md:py-10 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
@@ -73,11 +73,11 @@ const AboutSection = () => {
             </motion.h1>
 
             {/* Sticky Tabs */}
-            <div className="flex items-start gap-4 sticky top-20 bg-brand-bg/80 backdrop-blur-md z-10 py-4 rounded-xl">
+            <div className="flex items-start gap-4 sticky top-20 bg-brand-bg/80 backdrop-blur-md z-10 py-0 rounded-xl">
               {sections.map((section, index) => (
                 <button
                   key={index}
-                  className={`px-4 py-2 border-b-4 transition-colors duration-300 font-semibold text-xl ${
+                  className={`px-4 py-1 md:py-2 border-b-4 transition-colors duration-300 font-semibold text-xl ${
                     activeIndex === index 
                       ? "border-brand-yellow text-brand-dark" 
                       : "border-transparent text-gray-400 hover:text-brand-dark"

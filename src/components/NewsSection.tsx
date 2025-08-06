@@ -40,7 +40,7 @@ const NewsSection = () => {
     <section className="py-6 md:py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* News Header */}
-        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-12 md:mb-16">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8 md:mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-dark">
             Latest news & insights<span className="text-brand-yellow">.</span>
           </h2>
@@ -51,7 +51,7 @@ const NewsSection = () => {
         </div>
 
         {/* News Cards with Images */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 md:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 md:mb-12">
           {newsItems.map((item, index) => (
             <motion.div 
               key={index} 

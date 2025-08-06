@@ -41,16 +41,17 @@ const ExpertiseSection = () => {
   ];
 
   return (
-    <section className="py-6 md:py-6">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section className="py-2 md:py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-0 md:mb-0">
         
         {/* Main Heading and Introduction */}
-        <div className="text-left mb-16 max-w-4xl">
+        <div className="text-left mb-10 max-w-4xl">
+          
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-dark leading-tight">
             If you want to succeed in new markets, 
             you will need an <span className="text-brand-yellow">expert.</span>
           </h2>
-          <p className="text-lg text-gray-600 mt-6 leading-relaxed">
+          <p className="text-lg text-gray-600 mt-8 leading-relaxed">
             We know how to navigate the complexities and challenges of regulatory environments to ensure your operations are fully compliant and seamless. Whether it is business expansion or other strategic goals, our years of experience and in-depth knowledge will help you avoid pitfalls and achieve success faster.
           </p>
         </div>
