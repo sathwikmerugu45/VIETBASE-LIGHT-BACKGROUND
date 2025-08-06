@@ -36,13 +36,16 @@ const HeroSection = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-           <div>
-  <p className="text-sm md:text-base text-gray-600 text-justify">
-    "Bridging foreign ambition with local execution for success, driving impactful outcomes through grounded strategies."
+        <div className="text-sm md:text-base text-gray-600">
+  <p className="text-center lg:text-left">
+    "Bridging foreign ambition with local execution for success,<br className="hidden sm:block" />
+    driving impactful outcomes through grounded strategies."
   </p>
-
-  <p className="text-xs md:text-sm text-gray-500 text-left md:text-right mt-1">— KG</p>
+  <p className="text-xs md:text-sm text-gray-500 text-center lg:text-left mt-1">
+    — KG
+  </p>
 </div>
+
 
           </div>
 
