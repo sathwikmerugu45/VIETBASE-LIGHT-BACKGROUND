@@ -14,19 +14,16 @@ import Team from './components/Team';
 
 function App() {
   return (
-    <div className="bg-white">
+    // Removed bg-white to allow the body's gradient to show
+    <div>
       <Header />
       <HeroSection />
       <ResourceSection />
       <ExpertiseSection />
-      {/* <ResourceSection /> */}
       <NewsSection />
       <ServicesSection />
-      {/* <ClientStoriesSection /> */}
-      {/* <RegionalExpansionSection /> */}
       <AboutSection />
       <Team />
-      {/* <ResourcesSection /> */}
       <Footer />
     </div>
   );

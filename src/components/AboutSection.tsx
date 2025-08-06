@@ -2,22 +2,21 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Plus } from "lucide-react";
 
-interface ItalicizeCapsProps {
-  text: string;
-}
-
-const ItalicizeCaps: React.FC<ItalicizeCapsProps> = ({ text }) => {
+// Updated component to render inside a styled container
+const ItalicizeCaps: React.FC<{ text: string }> = ({ text }) => {
   const processText = (text: string): (string | JSX.Element)[] => {
     const regex = /\b([A-Z]+)\b/g;
     return text.split(/(\b[A-Z]+\b)/g).map((word, index) =>
-      regex.test(word) ? <em key={index}>{word}</em> : word
+      regex.test(word) ? <em key={index} className="not-italic font-semibold text-brand-dark">{word}</em> : word
     );
   };
 
   return (
-    <p className="mt-2 text-lg text-gray-600 leading-relaxed text-justify hyphens-auto">
-      {processText(text)}
-    </p>
+    <div className="mt-4 pt-4 border-t border-black/10">
+      <p className="text-base text-gray-600 leading-relaxed text-justify hyphens-auto">
+        {processText(text)}
+      </p>
+    </div>
   );
 };
 
@@ -53,47 +52,39 @@ const AboutSection = () => {
     },
   ];
 
-  const toggleFAQ = (index: number) => {
+   const toggleFAQ = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
   return (
-    <section className="bg-white text-gray-800 py-16 md:py-20 lg:py-8 px-4 sm:px-6">
+    <section className="py-20 md:py-28 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           {/* Left Content - Text Sections */}
           <div className="space-y-8">
             <motion.h1
-              className="text-4xl md:text-5xl font-bold leading-tight"
+              className="text-4xl md:text-5xl font-bold leading-tight text-brand-dark"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              {"Discover Our Story".split("").map((char, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05, duration: 0.5 }}
-                >
-                  {char}
-                </motion.span>
-              ))}
+              Discover Our Story<span className="text-brand-yellow">.</span>
             </motion.h1>
 
-            <div className="flex items-start gap-4 mb-4 sticky top-0 bg-white z-10 pt-4">
+            {/* Sticky Tabs */}
+            <div className="flex items-start gap-4 sticky top-20 bg-brand-bg/80 backdrop-blur-md z-10 py-4 rounded-xl">
               {sections.map((section, index) => (
                 <button
                   key={index}
-                  className={`px-4 py-2 border-b-2 ${
+                  className={`px-4 py-2 border-b-4 transition-colors duration-300 font-semibold text-xl ${
                     activeIndex === index 
-                      ? "border-yellow-500 text-2xl font-semibold text-yellow-500" 
-                      : "border-gray-300 text-2xl font-semibold text-gray-500"
+                      ? "border-brand-yellow text-brand-dark" 
+                      : "border-transparent text-gray-400 hover:text-brand-dark"
                   }`}
                   onClick={() => {
                     setActiveIndex(index);
-                    setExpandedIndex(index === 0 ? 0 : null);
+                    setExpandedIndex(0); // Auto-open the first item of the new tab
                   }}
                 >
                   {section.title}
@@ -101,18 +92,28 @@ const AboutSection = () => {
               ))}
             </div>
 
-            <div className="space-y-6">
+            {/* Accordion styled as cards */}
+            <div className="space-y-4">
               {sections[activeIndex].faqs.map((faq, index) => (
-                <div key={index} className="mb-6">
+                <div key={index} className="bg-brand-green/5 backdrop-blur-lg rounded-2xl border border-white/20 shadow-lg p-6 transition-all duration-300">
                   <div
                     className="flex justify-between items-center cursor-pointer"
                     onClick={() => toggleFAQ(index)}
                   >
-                    <p className="text-xl md:text-2xl font-medium text-gray-700">{faq.question}</p>
-                    <Plus size={20} className={`transition-transform border-2 rounded text-yellow-500 ${expandedIndex === index ? 'rotate-45' : ''}`} />
+                    <p className="text-lg md:text-xl font-bold text-brand-dark">{faq.question}</p>
+                    <div className={`w-8 h-8 flex items-center justify-center rounded-full border-2 ${expandedIndex === index ? 'border-brand-yellow' : 'border-brand-dark'} transition-all`}>
+                      <Plus size={20} className={`transition-transform duration-300 ${expandedIndex === index ? 'rotate-45 text-brand-yellow' : 'text-brand-dark'}`} />
+                    </div>
                   </div>
                   {expandedIndex === index && (
-                    <ItalicizeCaps text={faq.answer} />
+                     <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                    >
+                      <ItalicizeCaps text={faq.answer} />
+                    </motion.div>
                   )}
                 </div>
               ))}
@@ -120,37 +121,21 @@ const AboutSection = () => {
           </div>
 
           {/* Right side - Image Gallery */}
-          <div className="relative">
+          <div className="relative lg:sticky top-24">
             <motion.div
-              className="gallery w-full h-[60vh] relative overflow-hidden rounded-xl"
+              className="gallery w-full h-[70vh] relative overflow-hidden rounded-2xl shadow-2xl"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
             >
-              <img 
-                src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?q=80&w=2083" 
-                alt="Create an impact" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <img 
-                src="https://images.unsplash.com/photo-1487611459768-bd414656ea10?q=80&w=2070" 
-                alt="Always stand by clients" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <img 
-                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070" 
-                alt="Make future ready" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070" alt="Team meeting" className="absolute inset-0 w-full h-full object-cover"/>
             </motion.div>
-
-            {/* Navigation Buttons */}
-            <div className="flex items-center justify-center mt-8 gap-4">
-              <button className="p-3 hover:bg-gray-200 transition rounded-full">
-                <ChevronLeft className="w-8 h-8 text-yellow-500" />
+            <div className="absolute bottom-6 right-6 flex items-center gap-4">
+              <button className="p-3 bg-white/60 backdrop-blur-sm hover:bg-white/90 transition rounded-full shadow-md">
+                <ChevronLeft className="w-8 h-8 text-brand-dark" />
               </button>
-              <button className="p-3 hover:bg-gray-200 transition rounded-full">
-                <ChevronRight className="w-8 h-8 text-yellow-500" />
+              <button className="p-3 bg-white/60 backdrop-blur-sm hover:bg-white/90 transition rounded-full shadow-md">
+                <ChevronRight className="w-8 h-8 text-brand-dark" />
               </button>
             </div>
           </div>
