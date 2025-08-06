@@ -32,10 +32,15 @@ const Header = () => {
                 style={{ minWidth: '110%', minHeight: '110%' }}
               />
             </div>
-            <div className="text-brand-dark">
-              <div className="font-bold text-sm md:text-2xl tracking-wider">VIETBASE</div>
-              <div className="text-[0.62rem] text-brand-green tracking-[0.65em]">CONSULTING</div>
-            </div>
+            <div className="text-brand-dark leading-tight">
+  <div className="font-bold text-lg md:text-2xl tracking-wider">
+    VIETBASE
+  </div>
+  <div className="text-[0.57rem] md:text-[0.62rem] tracking-[0.42em] md:tracking-[0.65em] block w-full text-brand-green text-center md:text-left">
+    CONSULTING
+  </div>
+</div>
+
           </div>
 
           {/* Mobile Navigation Toggle */}
