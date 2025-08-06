@@ -37,7 +37,7 @@ const events = [
 
 const NewsSection = () => {
   return (
-    <section className="py-16 md:py-10">
+    <section className="py-6 md:py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* News Header */}
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-12 md:mb-16">
@@ -81,7 +81,7 @@ const NewsSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Left Column */}
           <div>
-            <h3 className="text-3xl font-bold mb-8 text-brand-dark">
+            <h3 className="text-3xl font-bold mt-0 mb-8 text-brand-dark">
               Upcoming & recent events
             </h3>
             <div className="space-y-6">

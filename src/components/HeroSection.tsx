@@ -3,47 +3,55 @@ import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   return (
-    <section className="text-brand-dark pt-24 md:pt-32 pb-0 lg:pt-0 lg:min-h-screen lg:flex lg:items-center overflow-x-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="text-brand-dark pt-20 md:pt-28 lg:pt-32 pb-16 lg:pb-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         {/* Left Content */}
         <motion.div 
-          className="space-y-8 lg:space-y-10 order-2 lg:order-1 text-center lg:text-left"
+          className="space-y-6 lg:space-y-8 order-2 lg:order-1 text-center lg:text-left"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-brand-dark">
-            <div>Ready to build</div>
-            <div>your business</div>
-            <div className="text-brand-yellow">
-              <span className="text-[0.9em]">in</span> Vietnam?
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight text-brand-dark">
+            {/* Mobile: 2-line version */}
+            <div className="lg:hidden">
+              <div className="leading-tight">Ready to build your business</div>
+              <div className="text-brand-yellow leading-tight">in Vietnam?</div>
+            </div>
+            
+            {/* Desktop: 3-line version */}
+            <div className="hidden lg:block">
+              <div className="leading-tight">Ready to build</div>
+              <div className="leading-tight">your business</div>
+              <div className="text-brand-yellow leading-tight">in Vietnam?</div>
             </div>
           </h1>
 
           {/* Creator Info */}
-          <div className="flex items-center space-x-4 mt-6 md:mt-8 justify-center lg:justify-start">
-            <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+          <div className="flex items-center space-x-4 mt-4 md:mt-6 justify-center lg:justify-start">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0">
               <img 
                 src="https://clavistraconsultants.com/image2.jpg" 
                 alt="VIETBASE Founder" 
                 className="w-full h-full object-cover"
               />
             </div>
-            <div>
-              <p className="text-sm md:text-lg text-gray-600">
-                Bridging foreign ambition with<br className="hidden sm:block" />
-                local execution for success.
-              </p>
-              <p className="text-gray-500 mt-1 text-sm">— KG</p>
-            </div>
+           <div>
+  <p className="text-sm md:text-base text-gray-600 text-justify">
+    "Bridging foreign ambition with local execution for success, driving impactful outcomes through grounded strategies."
+  </p>
+
+  <p className="text-xs md:text-sm text-gray-500 text-left md:text-right mt-1">— KG</p>
+</div>
+
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-4 justify-center lg:justify-start">
-            <button className="bg-brand-yellow text-brand-dark px-8 py-3 rounded-full font-semibold hover:bg-opacity-80 transition-colors text-base">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-0 md:pt-0 justify-center lg:justify-start">
+            <button className="bg-brand-yellow text-brand-dark px-6 py-2.5 sm:px-8 sm:py-3 rounded-full font-semibold hover:bg-opacity-80 transition-colors text-sm sm:text-base">
               Explore Services
             </button>
-            <button className="bg-transparent border-2 border-brand-dark text-brand-dark px-8 py-3 rounded-full hover:bg-brand-dark hover:text-white transition-all text-base">
+            <button className="bg-transparent border-2 border-brand-dark text-brand-dark px-6 py-2.5 sm:px-8 sm:py-3 rounded-full hover:bg-brand-dark hover:text-white transition-all text-sm sm:text-base">
               Schedule Consultation
             </button>
           </div>
@@ -56,11 +64,11 @@ const HeroSection = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="rounded-3xl overflow-hidden max-w-md mx-auto lg:max-w-none shadow-2xl">
+          <div className="rounded-2xl lg:rounded-3xl overflow-hidden max-w-md mx-auto lg:max-w-none shadow-xl lg:shadow-2xl">
             <img 
               src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
               alt="Business consulting in Vietnam" 
-              className="w-full h-[350px] lg:h-[500px] object-cover"
+              className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px] object-cover"
             />
           </div> 
         </motion.div>
