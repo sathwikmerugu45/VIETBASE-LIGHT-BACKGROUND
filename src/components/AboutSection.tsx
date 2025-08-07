@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Plus } from "lucide-react";
 
 // Updated component to render inside a styled container
@@ -19,7 +19,6 @@ const ItalicizeCaps: React.FC<{ text: string }> = ({ text }) => {
     </div>
   );
 };
-
 
 const AboutSection = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -56,6 +55,11 @@ const AboutSection = () => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
+  const handleTabChange = (index: number) => {
+    setActiveIndex(index);
+    setExpandedIndex(0); // Auto-open the first item of the new tab
+  };
+
   return (
     <section className="py-2 md:py-10 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
@@ -72,52 +76,88 @@ const AboutSection = () => {
               Discover Our Story<span className="text-brand-yellow">.</span>
             </motion.h1>
 
-            {/* Sticky Tabs */}
+            {/* Sticky Tabs with enhanced animations */}
             <div className="flex items-start gap-2 md:gap-4 sticky top-20 bg-brand-bg/80 backdrop-blur-md z-10 py-0 rounded-xl">
               {sections.map((section, index) => (
-                <button
+                <motion.button
                   key={index}
-                  className={`px-2 md:px-4 py-1 md:py-2 border-b-4 transition-colors duration-300 font-semibold text-lg md:text-xl ${
+                  className={`px-2 md:px-4 py-1 md:py-2 border-b-4 transition-all duration-500 font-semibold text-lg md:text-xl relative ${
                     activeIndex === index 
                       ? "border-brand-yellow text-brand-dark" 
                       : "border-transparent text-gray-400 hover:text-brand-dark"
                   }`}
-                  onClick={() => {
-                    setActiveIndex(index);
-                    setExpandedIndex(0); // Auto-open the first item of the new tab
-                  }}
+                  onClick={() => handleTabChange(index)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   {section.title}
-                </button>
+                  {activeIndex === index && (
+                    <motion.div
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-yellow"
+    initial={{ scaleX: 0 }}
+    animate={{ scaleX: 1 }}
+    exit={{ scaleX: 0 }}
+    transition={{ duration: 0.3 }}
+                    />
+                  )}
+                </motion.button>
               ))}
             </div>
 
-            {/* Accordion styled as cards */}
-            <div className="space-y-3 md:space-y-4">
-              {sections[activeIndex].faqs.map((faq, index) => (
-                <div key={index} className="bg-brand-green/5 backdrop-blur-lg rounded-2xl border border-white/20 shadow-lg p-4 md:p-6 transition-all duration-300">
-                  <div
-                    className="flex justify-between items-center cursor-pointer"
-                    onClick={() => toggleFAQ(index)}
+            {/* Accordion styled as cards with smooth content transitions */}
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={activeIndex}
+                className="space-y-3 md:space-y-4"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                {sections[activeIndex].faqs.map((faq, index) => (
+                  <motion.div 
+                    key={index} 
+                    className="bg-brand-green/5 backdrop-blur-lg rounded-2xl border border-white/20 shadow-lg p-4 md:p-6 transition-all duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.02, boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}
                   >
-                    <p className="text-base md:text-xl font-bold text-brand-dark pr-2">{faq.question}</p>
-                    <div className={`w-6 h-6 md:w-8 md:h-8 flex items-center justify-center rounded-full border-2 flex-shrink-0 ${expandedIndex === index ? 'border-brand-yellow' : 'border-brand-dark'} transition-all`}>
-                      <Plus size={16} className={`md:w-5 md:h-5 transition-transform duration-300 ${expandedIndex === index ? 'rotate-45 text-brand-yellow' : 'text-brand-dark'}`} />
-                    </div>
-                  </div>
-                  {expandedIndex === index && (
-                     <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                    <div
+                      className="flex justify-between items-center cursor-pointer"
+                      onClick={() => toggleFAQ(index)}
                     >
-                      <ItalicizeCaps text={faq.answer} />
-                    </motion.div>
-                  )}
-                </div>
-              ))}
-            </div>
+                      <p className="text-base md:text-xl font-bold text-brand-dark pr-2">{faq.question}</p>
+                      <motion.div 
+                        className={`w-6 h-6 md:w-8 md:h-8 flex items-center justify-center rounded-full border-2 flex-shrink-0 ${expandedIndex === index ? 'border-brand-yellow' : 'border-brand-dark'} transition-all`}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <motion.div
+                          animate={{ rotate: expandedIndex === index ? 45 : 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <Plus size={16} className={`md:w-5 md:h-5 ${expandedIndex === index ? 'text-brand-yellow' : 'text-brand-dark'}`} />
+                        </motion.div>
+                      </motion.div>
+                    </div>
+                    <AnimatePresence>
+                      {expandedIndex === index && (
+                         <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.4, ease: "easeInOut" }}
+                        >
+                          <ItalicizeCaps text={faq.answer} />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
           </div>
 
           {/* Right side - Image Gallery */}

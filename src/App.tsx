@@ -11,6 +11,7 @@ import AboutSection from './components/AboutSection';
 // import ResourcesSection from './components/ResourcesSection';
 import Footer from './components/footer';
 import Team from './components/Team';
+import BookCallButton from './components/BookCallButton';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <AboutSection />
       <Team />
       <Footer />
+      <BookCallButton />
     </div>
   );
 }

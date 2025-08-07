@@ -41,7 +41,7 @@ const ExpertiseSection = () => {
   ];
 
   return (
-    <section className="py-8 -mb-4 md:mb-0 md:py-4">
+    <section className="py-8 -mb-4 md:mb-0 md:py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 -mb-2 md:mb-0">
         
         {/* Main Heading and Introduction */}

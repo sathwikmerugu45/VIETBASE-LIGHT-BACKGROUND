@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -31,32 +31,33 @@ const cardVariants = {
     opacity: 1,
     scale: 1,
     transition: {
-      delay: i * 0.02, // Reduced from 0.15
-      duration: 0.1,   // Reduced from 0.6
-      ease: [0.33, 1, 0.68, 1], // Smoother ease-in-out
+      delay: i * 0.02,
+      duration: 0.1,
+      ease: [0.33, 1, 0.68, 1],
     },
   }),
 };
 
-
-// --- New, High-Impact Card Component ---
 const ResourceCard = ({ category, title, color, index }: { category: string, title: string, color: string, index: number }) => {
   const isYellow = color === 'yellow';
   
-  const cardStyle = {
-    background: 'linear-gradient(145deg, #2D3748, #1A202C)', // Rich dark gradient
-    boxShadow: '0 10px 30px rgba(0,0,0,0.2), 0 1px 4px rgba(0,0,0,0.1)',
-  };
+const cardStyle = {
+  background: isYellow
+    ? 'linear-gradient(145deg, #2D3748, #1A202C)'
+    : 'linear-gradient(145deg, #1F2A2E, #1C2E29)', // 👈 THIS IS THE LINE TO CHANGE
+  boxShadow: '0 10px 30px rgba(0,0,0,0.2), 0 1px 4px rgba(0,0,0,0.1)',
+};
+
 
   const borderGradient = isYellow 
-    ? 'from-yellow-400 to-amber-500' 
-    : 'from-green-400 to-emerald-500';
+    ? 'from-brand-yellow to-brand-yellow/80' 
+    : 'from-brand-green to-brand-green/80';
 
   const iconBg = isYellow 
-    ? 'bg-gradient-to-br from-yellow-400 to-amber-500' 
-    : 'bg-gradient-to-br from-green-400 to-emerald-500';
+    ? 'bg-gradient-to-br from-brand-yellow to-brand-yellow/90' 
+    : 'bg-gradient-to-br from-brand-green to-brand-green/90';
     
-  const categoryText = isYellow ? 'text-yellow-400' : 'text-green-400';
+  const categoryText = isYellow ? 'text-brand-yellow' : 'text-brand-green';
 
   return (
     <motion.div
@@ -73,8 +74,12 @@ const ResourceCard = ({ category, title, color, index }: { category: string, tit
       
       <div className="relative z-10 p-8 h-full flex flex-col justify-between bg-gray-800/80 rounded-[1.4rem] backdrop-blur-sm">
         <div>
-          <div className={`font-bold text-sm ${categoryText} mb-4 tracking-wide`}>{category}</div>
+          {/* Updated category text with better contrast */}
+          <div className={`font-bold text-sm ${categoryText} mb-4 tracking-wide px-3 py-1 rounded-lg bg-gray-900/50 inline-block`}>
+            {category}
+          </div>
           <h3 className="text-4xl font-extrabold mb-8 text-white" dangerouslySetInnerHTML={{ __html: title }} />
+
         </div>
         
         <div className={`w-20 h-20 rounded-xl flex items-center justify-center cursor-pointer ${iconBg} shadow-lg group-hover:scale-105 transition-transform`}>
@@ -85,10 +90,9 @@ const ResourceCard = ({ category, title, color, index }: { category: string, tit
   );
 };
 
-
 const ResourceSection = () => {
   return (
-  <section className="py-0 md:-py-4">
+    <section className="py-0 md:-py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8 md:mb-10">
           <h2 className="text-4xl md:text-5xl font-bold text-left text-brand-dark">
