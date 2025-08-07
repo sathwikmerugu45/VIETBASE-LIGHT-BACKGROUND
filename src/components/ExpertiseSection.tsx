@@ -41,23 +41,48 @@ const ExpertiseSection = () => {
   ];
 
   return (
-    <section className="py-10 md:py-4">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-0 md:mb-0">
+    <section className="py-8 -mb-4 md:mb-0 md:py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 -mb-2 md:mb-0">
         
         {/* Main Heading and Introduction */}
-        <div className="text-left mb-10 max-w-4xl">
+        <div className="text-left mb-2 md:mb-10 max-w-4xl">
           
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-dark leading-tight">
+          <h2 className="text-3xl mb-6 sm:text-4xl md:text-5xl font-bold text-brand-dark leading-tight">
             If you want to succeed in new markets, 
             you will need an <span className="text-brand-yellow">expert.</span>
           </h2>
-          <p className="text-lg text-gray-600 mt-8 leading-relaxed">
+          <p className="text-lg text-gray-600 leading-relaxed">
             We know how to navigate the complexities and challenges of regulatory environments to ensure your operations are fully compliant and seamless. Whether it is business expansion or other strategic goals, our years of experience and in-depth knowledge will help you avoid pitfalls and achieve success faster.
           </p>
         </div>
         
-        {/* New 4-Column Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+        {/* Mobile: Divider lines, Desktop: Clean columns */}
+        <div className="block sm:hidden">
+          <div className="space-y-0">
+            {expertises.map((item, index) => (
+              <motion.div
+                key={index}
+                className="text-left py-4 border-b border-gray-300 last:border-b-0"
+                variants={columnVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                custom={index}
+              >
+                <item.icon className="w-12 h-12 text-brand-green mb-4" strokeWidth={1.5} />
+                <h3 className="text-xl font-bold text-brand-dark mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {item.text}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Tablet and Desktop: Grid layout */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8">
           {expertises.map((item, index) => (
             <motion.div
               key={index}
@@ -68,7 +93,7 @@ const ExpertiseSection = () => {
               viewport={{ once: true, amount: 0.3 }}
               custom={index}
             >
-              <item.icon className="w-12 h-12 text-brand-green mb-5" strokeWidth={1.5} />
+              <item.icon className="w-12 h-12 text-brand-green mb-4" strokeWidth={1.5} />
               <h3 className="text-xl font-bold text-brand-dark mb-3">
                 {item.title}
               </h3>
@@ -78,6 +103,55 @@ const ExpertiseSection = () => {
             </motion.div>
           ))}
         </div>
+        
+        {/* Alternative: Divider lines for mobile (uncomment if you prefer this approach) */}
+        {/* 
+        <div className="block lg:hidden">
+          <div className="space-y-8">
+            {expertises.map((item, index) => (
+              <motion.div
+                key={index}
+                className="text-left pb-8 border-b border-gray-200 last:border-b-0 last:pb-0"
+                variants={columnVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                custom={index}
+              >
+                <item.icon className="w-12 h-12 text-brand-green mb-4" strokeWidth={1.5} />
+                <h3 className="text-xl font-bold text-brand-dark mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {item.text}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="hidden lg:grid lg:grid-cols-4 lg:gap-x-8 lg:gap-y-6">
+          {expertises.map((item, index) => (
+            <motion.div
+              key={index}
+              className="text-left"
+              variants={columnVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              custom={index}
+            >
+              <item.icon className="w-12 h-12 text-brand-green mb-4" strokeWidth={1.5} />
+              <h3 className="text-xl font-bold text-brand-dark mb-3">
+                {item.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {item.text}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+        */}
       </div>
     </section>
   );

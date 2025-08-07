@@ -37,10 +37,10 @@ const events = [
 
 const NewsSection = () => {
   return (
-    <section className="py-6 md:py-6">
+    <section className="py-0 md:py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* News Header */}
-        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8 md:mb-12">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 md:mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-dark">
             Latest news & insights<span className="text-brand-yellow">.</span>
           </h2>
@@ -51,7 +51,7 @@ const NewsSection = () => {
         </div>
 
         {/* News Cards with Images */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 md:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 md:mb-12">
           {newsItems.map((item, index) => (
             <motion.div 
               key={index} 
@@ -81,7 +81,7 @@ const NewsSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Left Column */}
           <div>
-            <h3 className="text-3xl font-bold mt-0 mb-8 text-brand-dark">
+            <h3 className="text-3xl font-bold mt-0 mb-6 md:mb-8 text-brand-dark">
               Upcoming & recent events
             </h3>
             <div className="space-y-6">
@@ -121,7 +121,7 @@ const NewsSection = () => {
         </div>
 
         {/* Navigation dots */}
-        <div className="flex justify-center space-x-2 mt-12">
+        <div className="flex justify-center space-x-2 mt-6">
           <div className="w-2.5 h-2.5 bg-brand-green rounded-full"></div>
           <div className="w-2.5 h-2.5 bg-gray-300 rounded-full"></div>
           <div className="w-2.5 h-2.5 bg-gray-300 rounded-full"></div>

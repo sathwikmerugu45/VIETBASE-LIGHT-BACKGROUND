@@ -26,17 +26,18 @@ const cardData = [
 ];
 
 const cardVariants = {
-  hidden: { opacity: 0, scale: 0.9 },
+  hidden: { opacity: 0, scale: 0.95 },
   visible: (i: number) => ({
     opacity: 1,
     scale: 1,
     transition: {
-      delay: i * 0.15,
-      duration: 0.6,
-      ease: [0.25, 1, 0.5, 1], // A more dynamic ease
+      delay: i * 0.02, // Reduced from 0.15
+      duration: 0.1,   // Reduced from 0.6
+      ease: [0.33, 1, 0.68, 1], // Smoother ease-in-out
     },
   }),
 };
+
 
 // --- New, High-Impact Card Component ---
 const ResourceCard = ({ category, title, color, index }: { category: string, title: string, color: string, index: number }) => {

@@ -35,7 +35,7 @@ const Team = () => {
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.h1
-          className="text-3xl md:text-5xl mt-6 md:mt-0 font-bold text-brand-dark leading-tight mb-6"
+          className="text-3xl md:text-5xl mt-6 md:mt-0 font-bold text-brand-dark leading-tight mb-4 md:mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -46,7 +46,7 @@ const Team = () => {
 
         {/* Subheading */}
         <motion.p
-          className="text-lg text-gray-600 leading-relaxed mb-10 max-w-4xl"
+          className="text-lg text-gray-600 leading-relaxed mb-6 max-w-4xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

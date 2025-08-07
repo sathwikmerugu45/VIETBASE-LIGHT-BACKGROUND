@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   return (
-    <section className="text-brand-dark pt-16 sm:pt-20 md:pt-20 lg:pt-32 pb-12 sm:pb-16 md:pb-0 lg:pb-24">
+    <section className="text-brand-dark pt-16 sm:pt-20 md:pt-20 lg:pt-32 pb-6 sm:pb-10 md:pb-0 lg:pb-24">
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
         {/* Left Content */}
         <motion.div 
@@ -15,9 +16,9 @@ const HeroSection = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-brand-dark">
             {/* Mobile: 3-line version with controlled breaks */}
             <div className="lg:hidden">
-              <div className="leading-[1.1]">Ready to build</div>
-              <div className="leading-[1.1]">your business</div>
-              <div className="text-brand-yellow leading-[1.1]">in Vietnam?</div>
+              <div className="leading-[1.1]">Ready to build your</div>
+              {/* <div className="leading-[1.1]"></div> */}
+              <div className="text-brand-yellow leading-[1.1]">business in Vietnam?</div>
             </div>
             
             {/* Desktop: 3-line version */}

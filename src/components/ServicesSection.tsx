@@ -75,7 +75,7 @@ const ServiceCard = ({ icon: Icon, label, title, color, items, index }: any) => 
       </div>
 
       {/* Heading */}
-      <div className="mb-6 text-left">
+      <div className="mb-0 md:mb-6 text-left">
         <div className="text-sm text-gray-400 mb-2 uppercase tracking-wider">{label}</div>
         <h3 className={`text-3xl font-bold mb-4 ${titleColor}`}>{title}<span className="text-gray-500">.</span></h3>
       </div>
@@ -106,11 +106,11 @@ const ServicesSection = () => {
     <section className="py-4 md:py-5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-16 text-center">
-          <div className="text-brand-yellow font-semibold mb-4 tracking-wider">
+        <div className="mb-10 md:mb-16 text-center">
+          <div className="text-brand-yellow font-semibold mb-0 md:mb-4 tracking-wider">
             ● OUR SERVICES
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight text-brand-dark">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight text-brand-dark">
             Corporate services for every<br className="hidden sm:block" />
             part of your <span className="text-brand-dark">journey</span><span className="text-brand-yellow">.</span>
           </h2>
