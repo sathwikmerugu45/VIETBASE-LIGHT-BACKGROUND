@@ -20,15 +20,16 @@ const HeroSection = () => {
               <div className="text-brand-yellow leading-[1.1]">business in Vietnam?</div>
             </div>
             
-            {/* Desktop: 3-line version */}
-            <div className="hidden lg:block">
-              <div className="leading-tight">Ready to build</div>
-              <div className="leading-tight">your business</div>
-              <div className="text-brand-yellow leading-tight">in Vietnam?</div>
-            </div>
+           {/* Desktop: 3-line version */}
+<div className="hidden lg:flex flex-col justify-start space-y-[0.0001rem] relative -top-2">
+  <div className="leading-tight">Ready to build</div>
+  <div className="leading-tight">your business</div>
+  <div className="text-brand-yellow leading-tight">in Vietnam?</div>
+</div>
+
           </h1>
 
-       {/* Creator Info */}
+     {/* Creator Info */}
 <motion.div 
   className="mt-4 xs:mt-6 sm:mt-8 md:mt-6"
   initial={{ opacity: 0, y: 20 }}
@@ -39,7 +40,7 @@ const HeroSection = () => {
     y: -2
   }}
 >
-  <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start bg-white/50 backdrop-blur-sm rounded-xl p-3 xs:p-4 sm:p-5 shadow-sm transition-all duration-300">
+<div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start bg-gradient-to-br from-yellow-50 via-amber-50 to-yellow-100/80 backdrop-blur-sm rounded-xl p-3 xs:p-4 sm:p-5 shadow-lg border border-yellow-200/30 transition-all duration-300">    
     <motion.div 
       className="w-10 h-10 xs:w-12 xs:h-12 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0 shadow-md"
       whileHover={{ scale: 1.1 }}
@@ -51,27 +52,43 @@ const HeroSection = () => {
         className="w-full h-full object-cover"
       />
     </motion.div>
+
     <div className="text-xs xs:text-sm md:text-base text-gray-600 flex-1">
-      <div className="text-center sm:text-left">
-        {/* Desktop version remains unchanged */}
-        <p className="hidden sm:block">
-          <span className="block">"Bridging foreign ambition with local execution for success,</span>
-          <span className="block">driving impactful outcomes through grounded strategies."</span>
-        </p>
-        
-        {/* Improved mobile version */}
-        <p className="sm:hidden px-2">
-          "Bridging foreign ambition with local<br className="xs:hidden" />
-          execution for success, driving<br className="xs:hidden" />
-          impactful outcomes through grounded strategies."
-        </p>
-      </div>
-      <p className="text-[10px] xs:text-xs md:text-sm text-gray-500 text-center sm:text-left mt-2">
+      {/* Desktop version remains unchanged */}
+<div className="hidden sm:block">
+  <p className="relative">
+    <span className="block">
+      "Bridging foreign ambition with local execution for success,
+    </span>
+    <span className="block">
+      driving impactful outcomes through grounded strategies".
+      <span className="ml-2 font-bold text-[10px] xs:text-xs md:text-sm text-gray-500 align-middle">
         — KG
-      </p>
+      </span>
+    </span>
+  </p>
+</div>
+
+{/* Mobile version */}
+<div className="sm:hidden px-2">
+  <p className="text-sm leading-snug text-gray-800 flex flex-wrap items-center">
+    <span>
+      Bridging foreign ambition with local
+      <br className="xs:hidden" />
+      execution for success, driving impactful outcomes through grounded strategies.
+    </span>
+    <span className="ml-auto pl-2 text-[10px] xs:text-xs md:text-sm text-gray-500 whitespace-nowrap">
+      — KG
+    </span>
+  </p>
+</div>
+
+
+
     </div>
   </div>
 </motion.div>
+
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4 justify-center lg:justify-start">

@@ -77,7 +77,7 @@ const ServiceCard = ({ icon: Icon, label, title, color, items, index }: any) => 
       {/* Heading */}
       <div className="mb-0 md:mb-6 text-left">
         <div className="text-sm text-gray-400 mb-2 uppercase tracking-wider">{label}</div>
-        <h3 className={`text-3xl font-bold mb-4 ${titleColor}`}>{title}<span className="text-gray-500">.</span></h3>
+        <h3 className={`text-3xl font-bold mb-4 ${titleColor}`}>{title}<span className="text-gray-500"></span></h3>
       </div>
 
       {/* Bullet Points */}
@@ -111,8 +111,8 @@ const ServicesSection = () => {
             ● OUR SERVICES
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight text-brand-dark">
-            Corporate services for every<br className="hidden sm:block" />
-            part of your <span className="text-brand-dark">journey</span><span className="text-brand-yellow">.</span>
+            Corporate Services For Every<br className="hidden sm:block" />
+            Part of Your <span className="text-brand-dark">Journey</span><span className="text-brand-yellow"></span>
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto -mb-4 leading-relaxed">
             Find intelligent answers to the most complex administrative issues you'll come up against as your business expands into Vietnam and beyond. Ask us for solutions, not just advice.

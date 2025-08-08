@@ -57,7 +57,7 @@ const cardStyle = {
     ? 'bg-gradient-to-br from-brand-yellow to-brand-yellow/90' 
     : 'bg-gradient-to-br from-brand-green to-brand-green/90';
     
-  const categoryText = isYellow ? 'text-brand-yellow' : 'text-brand-green';
+  const categoryText = isYellow ? 'text-brand-yellow' : 'text-white';
 
   return (
     <motion.div
@@ -96,7 +96,7 @@ const ResourceSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8 md:mb-10">
           <h2 className="text-4xl md:text-5xl font-bold text-left text-brand-dark">
-            Find the right solution.
+            The Right Solution For You
           </h2>
         </div>
 

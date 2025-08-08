@@ -35,13 +35,13 @@ const Team = () => {
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.h1
-          className="text-3xl md:text-5xl mt-6 md:mt-0 font-bold text-brand-dark leading-tight mb-4 md:mb-6"
+          className="text-3xl md:text-5xl mt-6 md:mt-6 font-bold text-brand-dark leading-tight mb-4 md:mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          Meet Our Core Team<span className="text-brand-yellow">.</span>
+          Meet Our Core Team<span className="text-brand-yellow"></span>
         </motion.h1>
 
         {/* Subheading */}

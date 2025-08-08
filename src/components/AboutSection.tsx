@@ -73,7 +73,7 @@ const AboutSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Discover Our Story<span className="text-brand-yellow">.</span>
+              Discover Our Story<span className="text-brand-yellow"></span>
             </motion.h1>
 
             {/* Sticky Tabs with enhanced animations */}
