@@ -29,22 +29,26 @@ const HeroSection = () => {
 
           </h1>
 
-     {/* Creator Info */}
-<motion.div 
+    <motion.div 
   className="mt-4 xs:mt-6 sm:mt-8 md:mt-6"
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.4, duration: 0.6 }}
   whileHover={{ 
-    boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
-    y: -2
+    boxShadow: "0 10px 20px rgba(0,0,0,0.08), 0 0 10px rgba(255,200,0,0.2)",
+    y: -2,
+    scale: 1.015
   }}
 >
-<div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start bg-gradient-to-br from-yellow-50 via-amber-50 to-yellow-100/80 backdrop-blur-sm rounded-xl p-3 xs:p-4 sm:p-5 shadow-lg border border-yellow-200/30 transition-all duration-300">    
+  <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start rounded-xl p-3 xs:p-4 sm:p-5 shadow-md border border-yellow-300/50 transition-all duration-500 relative overflow-hidden bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-100">
+    
+    {/* Subtle metallic shine overlay */}
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(255,255,255,0.08),_transparent)] pointer-events-none"></div>
+
     <motion.div 
-      className="w-10 h-10 xs:w-12 xs:h-12 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0 shadow-md"
-      whileHover={{ scale: 1.1 }}
-      transition={{ duration: 0.2 }}
+      className="w-10 h-10 xs:w-12 xs:h-12 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0 shadow-sm border border-yellow-200 relative z-10"
+      whileHover={{ scale: 1.1, rotate: 2 }}
+      transition={{ duration: 0.3, type: "spring", stiffness: 250 }}
     >
       <img 
         src="https://clavistraconsultants.com/image2.jpg" 
@@ -53,52 +57,77 @@ const HeroSection = () => {
       />
     </motion.div>
 
-    <div className="text-xs xs:text-sm md:text-base text-gray-600 flex-1">
-      {/* Desktop version remains unchanged */}
-<div className="hidden sm:block">
-  <p className="relative">
-    <span className="block">
-      "Bridging foreign ambition with local execution for success,
-    </span>
-    <span className="block">
-      driving impactful outcomes through grounded strategies".
-      <span className="ml-2 font-bold text-[10px] xs:text-xs md:text-sm text-gray-500 align-middle">
-        — KG
-      </span>
-    </span>
-  </p>
-</div>
+    <div className="text-xs xs:text-sm md:text-base text-gray-800 flex-1 relative z-10">
+      {/* Desktop version */}
+      <div className="hidden sm:block">
+        <p className="relative">
+          <span className="block">
+            "Bridging foreign ambition with local execution for success,
+          </span>
+          <span className="block">
+            driving impactful outcomes through grounded strategies".
+            <span className="ml-2 font-bold text-[10px] xs:text-xs md:text-sm text-gray-700 align-middle">
+              — KG
+            </span>
+          </span>
+        </p>
+      </div>
 
-{/* Mobile version */}
-<div className="sm:hidden px-2">
-  <p className="text-sm leading-snug text-gray-800 flex flex-wrap items-center">
-    <span>
-      Bridging foreign ambition with local
-      <br className="xs:hidden" />
-      execution for success, driving impactful outcomes through grounded strategies.
-    </span>
-    <span className="ml-auto pl-2 text-[10px] xs:text-xs md:text-sm text-gray-500 whitespace-nowrap">
-      — KG
-    </span>
-  </p>
-</div>
-
-
-
+      {/* Mobile version */}
+      <div className="sm:hidden px-2">
+        <p className="text-sm leading-snug text-gray-800">
+          Bridging foreign ambition with local<br className="xs:hidden" />
+          execution for success, driving impactful outcomes<br className="xs:hidden" />
+          through grounded strategies.
+          <span className="ml-2 font-bold text-[10px] xs:text-xs md:text-sm text-gray-700">
+            — KG
+          </span>
+        </p>
+      </div>
     </div>
   </div>
 </motion.div>
 
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4 justify-center lg:justify-start">
-            <button className="bg-brand-yellow text-brand-dark px-6 py-3 sm:px-8 sm:py-3 rounded-full font-semibold hover:bg-opacity-80 transition-colors text-sm sm:text-base">
-              Explore Services
-            </button>
-            <button className="bg-transparent border-2 border-brand-dark text-brand-dark px-6 py-3 sm:px-8 sm:py-3 rounded-full hover:bg-brand-dark hover:text-white transition-all text-sm sm:text-base">
-              Schedule Consultation
-            </button>
-          </div>
+
+          {/* Enhanced CTA Buttons */}
+         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-5 justify-center lg:justify-start">
+  <motion.button 
+    className="group relative bg-brand-yellow text-brand-dark px-6 py-3 sm:px-8 sm:py-3.5 rounded-full font-medium text-sm sm:text-base overflow-hidden transition-all duration-300 shadow-md hover:shadow-lg"
+    whileHover={{ 
+      scale: 1.05,
+      boxShadow: "0 10px 20px rgba(255,193,7,0.3)"
+    }}
+    whileTap={{ scale: 0.97 }}
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.6, duration: 0.5 }}
+  >
+    <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+      Explore Services
+    </span>
+    <div className="absolute inset-0 bg-brand-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+  </motion.button>
+
+  <motion.button 
+    className="group relative bg-transparent border-2 border-brand-dark text-brand-dark px-6 py-3 sm:px-8 sm:py-3.5 rounded-full font-medium text-sm sm:text-base overflow-hidden transition-all duration-300 shadow-md hover:shadow-lg"
+    whileHover={{ 
+      scale: 1.05,
+      borderColor: "transparent",
+      boxShadow: "0 10px 20px rgba(0,0,0,0.15)"
+    }}
+    whileTap={{ scale: 0.97 }}
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.7, duration: 0.5 }}
+  >
+    <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+      Schedule Consultation
+    </span>
+    <div className="absolute inset-0 bg-brand-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></div>
+  </motion.button>
+</div>
+
         </motion.div>
 
         {/* Right Image */}

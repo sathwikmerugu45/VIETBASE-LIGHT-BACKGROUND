@@ -14,7 +14,7 @@ const BookCallButton = () => {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 text-sm font-medium max-w-[90vw]">
+<div className="fixed bottom-2 right-4 sm:bottom-4 sm:right-6 z-50 text-sm font-medium max-w-[90vw]">
       {/* Animate open/close box */}
       <AnimatePresence>
         {isOpen && (
@@ -67,7 +67,7 @@ const BookCallButton = () => {
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className={`relative flex items-center gap-2 px-4 py-2.5 rounded-full text-white bg-brand-green hover:bg-brand-green/90 shadow-lg transition`}
+className={`relative flex items-center gap-3 px-5 py-3 text-base rounded-full text-white bg-brand-green hover:bg-brand-green/90 shadow-lg transition`}
       >
         <motion.span
           className="absolute top-0 left-0 w-full h-full rounded-full"
