@@ -29,26 +29,25 @@ const HeroSection = () => {
 
           </h1>
 
-    <motion.div 
+ Keep the bg colour somewhat light 
+{/* Creator Info */}
+<motion.div 
   className="mt-4 xs:mt-6 sm:mt-8 md:mt-6"
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.4, duration: 0.6 }}
   whileHover={{ 
-    boxShadow: "0 10px 20px rgba(0,0,0,0.08), 0 0 10px rgba(255,200,0,0.2)",
-    y: -2,
-    scale: 1.015
+    boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+    y: -2
+
   }}
 >
-  <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start rounded-xl p-3 xs:p-4 sm:p-5 shadow-md border border-yellow-300/50 transition-all duration-500 relative overflow-hidden bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-100">
-    
-    {/* Subtle metallic shine overlay */}
-    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(255,255,255,0.08),_transparent)] pointer-events-none"></div>
-
+<div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start bg-gradient-to-br from-white via-yellow-50 to-white
+ backdrop-blur-sm rounded-xl p-3 xs:p-4 sm:p-5 shadow-lg border border-yellow-200/30 transition-all duration-300">    
     <motion.div 
-      className="w-10 h-10 xs:w-12 xs:h-12 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0 shadow-sm border border-yellow-200 relative z-10"
-      whileHover={{ scale: 1.1, rotate: 2 }}
-      transition={{ duration: 0.3, type: "spring", stiffness: 250 }}
+      className="w-10 h-10 xs:w-12 xs:h-12 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0 shadow-md"
+      whileHover={{ scale: 1.1 }}
+      transition={{ duration: 0.2 }}
     >
       <img 
         src="https://clavistraconsultants.com/image2.jpg" 
@@ -57,21 +56,21 @@ const HeroSection = () => {
       />
     </motion.div>
 
-    <div className="text-xs xs:text-sm md:text-base text-gray-800 flex-1 relative z-10">
-      {/* Desktop version */}
-      <div className="hidden sm:block">
-        <p className="relative">
-          <span className="block">
-            "Bridging foreign ambition with local execution for success,
-          </span>
-          <span className="block">
-            driving impactful outcomes through grounded strategies".
-            <span className="ml-2 font-bold text-[10px] xs:text-xs md:text-sm text-gray-700 align-middle">
-              — KG
-            </span>
-          </span>
-        </p>
-      </div>
+    <div className="text-xs xs:text-sm md:text-base text-gray-600 flex-1">
+      {/* Desktop version remains unchanged */}
+<div className="hidden sm:block">
+  <p className="relative">
+    <span className="block">
+      "Bridging foreign ambition with local execution for success,
+    </span>
+    <span className="block">
+      driving impactful outcomes through grounded strategies".
+      <span className="ml-2 font-bold text-[10px] xs:text-xs md:text-sm text-gray-500 align-middle">
+        — KG
+      </span>
+    </span>
+  </p>
+</div>
 
       {/* Mobile version */}
       <div className="sm:hidden px-2">
