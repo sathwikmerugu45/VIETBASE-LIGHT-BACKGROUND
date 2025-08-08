@@ -55,7 +55,7 @@ const NewsSection = () => {
           {newsItems.map((item, index) => (
             <motion.div 
               key={index} 
-              className="group cursor-pointer relative overflow-hidden rounded-3xl shadow-2xl bg-white hover:shadow-3xl transition-all duration-500"
+              className="group cursor-pointer relative overflow-hidden rounded-3xl shadow-2xl bg-gradient-to-br from-amber-50 to-stone-50 hover:shadow-3xl transition-all duration-500"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}

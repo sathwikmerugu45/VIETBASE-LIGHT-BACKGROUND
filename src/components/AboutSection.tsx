@@ -77,7 +77,7 @@ const AboutSection = () => {
             </motion.h1>
 
             {/* Sticky Tabs with enhanced animations */}
-            <div className="flex items-start gap-2 md:gap-4 sticky top-20 bg-brand-bg/80 backdrop-blur-md z-10 py-0 rounded-xl">
+<div className="flex items-start gap-2 md:gap-4 sticky top-20 z-10 py-0">
               {sections.map((section, index) => (
                 <motion.button
                   key={index}

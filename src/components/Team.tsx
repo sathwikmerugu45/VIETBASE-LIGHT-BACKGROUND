@@ -31,7 +31,7 @@ const teamMembers = [
 
 const Team = () => {
   return (
-    <section className="py-24 md:py-0 px-4 sm:px-6">
+    <section className="py-24 mb-8 md:py-0 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.h1
