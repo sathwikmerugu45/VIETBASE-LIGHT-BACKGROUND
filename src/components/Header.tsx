@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/logo.png';
@@ -32,7 +33,9 @@ const Header = () => {
 
   return (
     <>
-<header className="fixed top-0 left-0 right-0 z-50 bg-brand-bg/75 backdrop-blur-md w-full shadow-sm">        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-4">
+<header className="fixed top-0 left-0 right-0 z-50 bg-brand-bg/75 backdrop-blur-md w-full shadow-sm">
+  {/* Gradient border effect */}
+  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-brand-green/40 to-transparent"></div> <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-3">

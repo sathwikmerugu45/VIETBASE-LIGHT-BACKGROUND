@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import React from 'react';
 import { ChevronRight, Calendar, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';

@@ -1,6 +1,6 @@
 import { Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
-
+import { useTranslation } from 'react-i18next';
 const teamMembers = [
   // You can add more team members here
   {

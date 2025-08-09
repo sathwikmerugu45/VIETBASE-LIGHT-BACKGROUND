@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Rocket, Settings, Briefcase, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -107,9 +108,10 @@ const ServicesSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-10 md:mb-16 text-center">
-          <div className="text-brand-yellow font-semibold mb-0 md:mb-4 tracking-wider">
-            ● OUR SERVICES
-          </div>
+          <div className="text-brand-yellow font-semibold text-lg md:text-xl mb-0 md:mb-4 tracking-wider">
+  ● OUR SERVICES ● 
+</div>
+
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight text-brand-dark">
             Corporate Services For Every<br className="hidden sm:block" />
             Part of Your <span className="text-brand-dark">Journey</span><span className="text-brand-yellow"></span>

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Shield, Users, Zap, Link2 } from 'lucide-react';
 import { motion } from "framer-motion";
 

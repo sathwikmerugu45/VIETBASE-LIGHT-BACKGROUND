@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
 const HeroSection = () => {
@@ -29,7 +30,6 @@ const HeroSection = () => {
 
           </h1>
 
- Keep the bg colour somewhat light 
 {/* Creator Info */}
 <motion.div 
   className="mt-4 xs:mt-6 sm:mt-8 md:mt-6"

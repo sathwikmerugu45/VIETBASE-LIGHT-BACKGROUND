@@ -12,7 +12,7 @@ import AboutSection from './components/AboutSection';
 import Footer from './components/footer';
 import Team from './components/Team';
 import BookCallButton from './components/BookCallButton';
-
+import './i18n'; // Import the config
 function App() {
   return (
     // Removed bg-white to allow the body's gradient to show
