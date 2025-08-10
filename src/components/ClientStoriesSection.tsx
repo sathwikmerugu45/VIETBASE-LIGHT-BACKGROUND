@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import React from 'react';
-
 const ClientStoriesSection = () => {
+const { t } = useTranslation();
+
   return (
     <section className="bg-white text-white py-16 px-4">
       <div className="max-w-7xl mx-auto">

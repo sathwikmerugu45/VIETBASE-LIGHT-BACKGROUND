@@ -11,7 +11,7 @@ import AboutSection from './components/AboutSection';
 // import ResourcesSection from './components/ResourcesSection';
 import Footer from './components/footer';
 import Team from './components/Team';
-import BookCallButton from './components/BookCallButton';
+import BookCallButton from './components/tidochat';
 import './i18n'; // Import the config
 function App() {
   return (

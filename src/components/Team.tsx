@@ -1,8 +1,9 @@
 import { Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from 'react-i18next';
+
+// Team member data is less likely to be translated, but if needed, could be moved to JSON as well
 const teamMembers = [
-  // You can add more team members here
   {
     name: "K Goutham",
     title: "IIT Madras, Consultant",
@@ -30,29 +31,21 @@ const teamMembers = [
 ];
 
 const Team = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-24 mb-8 md:py-0 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        {/* Heading */}
         <motion.h1
           className="text-3xl md:text-5xl mt-6 md:mt-6 font-bold text-brand-dark leading-tight mb-4 md:mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
         >
-          Meet Our Core Team<span className="text-brand-yellow"></span>
+          {t('team_section_title')}<span className="text-brand-yellow">.</span>
         </motion.h1>
 
-        {/* Subheading */}
         <motion.p
           className="text-lg text-gray-600 leading-relaxed mb-6 max-w-4xl"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.1 }}
         >
-          Our team brings together experienced Management Consultants, Startup Leaders, Top-ranking Chartered Accountants (CAs), Legal experts, and Marketing strategists—united by a shared commitment to delivering impactful consulting solutions.
+          {t('team_section_subtitle')}
         </motion.p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

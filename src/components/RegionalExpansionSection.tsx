@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import React from 'react';
 
 const RegionalExpansionSection = () => {
+const { t } = useTranslation();
   return (
     <section className="bg-black text-white py-18 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
